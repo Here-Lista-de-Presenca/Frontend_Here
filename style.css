@@ -29,8 +29,10 @@ body {
 .main {
     flex: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .btn-confirmar {
@@ -53,4 +55,18 @@ body {
 
 .btn-confirmar:active {
     transform: translateY(0);
+}
+
+.mensagem {
+    font-size: 16px;
+    font-weight: 500;
+    height: 20px;
+}
+
+.sucesso {
+    color: #2ecc71;
+}
+
+.erro {
+    color: #e74c3c;
 }
