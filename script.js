@@ -3,14 +3,15 @@ const mensagem = document.getElementById("mensagem");
 
 botao.addEventListener("click", async () => {
     try {
-        const response = await fetch("http://localhost:8080/registrar-presenca", {
+        const response = await fetch("http://localhost:8080/presenca/registrar", {
             method: "POST"
         });
 
         if (response.ok) {
             mostrarMensagem("Presença confirmada!", "sucesso");
         } else {
-            mostrarMensagem("Erro ao confirmar presença!", "erro");
+            const erroTexto = await response.text();
+            mostrarMensagem(erroTexto || "Erro ao confirmar presença!", "erro");
         }
 
     } catch (error) {
